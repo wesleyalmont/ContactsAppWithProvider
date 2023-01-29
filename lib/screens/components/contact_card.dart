@@ -1,5 +1,7 @@
 import 'package:contactsprovider/models/contact.dart';
+import 'package:contactsprovider/providers/contact_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ContactCard extends StatelessWidget {
   final ContactModel contact;
@@ -8,7 +10,14 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        print(contact.id);
+      },
+      onLongPress: () {
+        
+        Provider.of<ContactsProvider>(context, listen: false)
+            .remove(contact.id!);
+      },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
