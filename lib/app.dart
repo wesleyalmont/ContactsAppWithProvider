@@ -1,3 +1,4 @@
+import 'package:contactsprovider/screens/contact_form/contact_form.dart';
 import 'package:contactsprovider/screens/home.dart';
 import 'package:contactsprovider/styles/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +11,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Contacts Provider",
-      theme: myCustomTheme,
-      home: Home(),
-    );
+        title: "Contacts Provider",
+        theme: myCustomTheme,
+        initialRoute: '/',
+        routes: {
+          "/": (context) => const Home(),
+          '/form': (context) => const ContactForm(),
+        });
   }
 }
