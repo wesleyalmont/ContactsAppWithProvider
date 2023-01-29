@@ -25,7 +25,9 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/form');
+        },
         child: const Icon(Icons.add_outlined),
       ),
     );
